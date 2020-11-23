@@ -26,7 +26,7 @@ public class User {
     @Size(max = 15)
     private String username;
 
-    @NotBlank
-    @Size(max = 100)
-    private String password;
+    public User(@NotBlank @Size(max = 15) String username) {
+        this.username = username;
+    }
 }
