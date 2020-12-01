@@ -39,7 +39,7 @@ public class OrderController {
         return "Order has been added";
     }
 
-    @RequestMapping("/edit/{id}")
+    @PostMapping("/edit/{id}")
     public String edit(@PathVariable long id, @RequestBody OrderRequest orderRequest) {
         Order order = orderRepository.getOne(id);
         order.setTitle(orderRequest.getOrder());
