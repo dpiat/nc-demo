@@ -25,23 +25,16 @@ public class UserController {
         List<User> allUsers = userRepository.findAll();
         ArrayList<UserSummary> allUsersResponse = new ArrayList<>();
         for (User user : allUsers) {
-            List<OrderSummary> orderSummaries = new ArrayList<>();
+           /* List<OrderSummary> orderSummaries = new ArrayList<>();
             List<Order> orders = user.getOrders();
             for (Order order : orders) {
                 OrderSummary orderSummary = new OrderSummary(order.getId(), order.getTitle());
                 orderSummaries.add(orderSummary);
-            }
-            UserSummary userSummary = new UserSummary(user.getId(), user.getUsername(), orderSummaries);
+            }*/
+            UserSummary userSummary = new UserSummary(user.getId(), user.getUsername());
             allUsersResponse.add(userSummary);
         }
         return allUsersResponse;
-    }
-
-    @PostMapping("/add")
-    public String createUser(@RequestBody UserRequest userRequest) {
-        User user = new User(userRequest.getUsername(), userRequest.getPassword());
-        userRepository.save(user);
-        return "User has been added";
     }
 
     @PostMapping("/edit/{id}")
@@ -62,14 +55,6 @@ public class UserController {
         return "User has been deleted";
     }
 
-
-
-    // for test only
-/*    @GetMapping("/addUser")
-    public void addUser(String username) {
-        User user = new User(username);
-        userRepository.save(user);
-    }*/
 
     // for test only
     @GetMapping("/echo")

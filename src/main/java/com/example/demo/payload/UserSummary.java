@@ -13,5 +13,5 @@ import java.util.List;
 public class UserSummary {
     private Long id;
     private String username;
-    private List<OrderSummary> orders;
+   /* private List<OrderSummary> orders;*/
 }
