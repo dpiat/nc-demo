@@ -54,11 +54,4 @@ public class UserController {
 
         return "User has been deleted";
     }
-
-
-    // for test only
-    @GetMapping("/echo")
-    public String echo(String text) {
-        return text;
-    }
 }

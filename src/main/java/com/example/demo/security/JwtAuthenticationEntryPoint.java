@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * This class is used to return a 401 unauthorized error to clients that try to access
+ * a protected resource without proper authentication. It implements Spring Security’s
+ * AuthenticationEntryPoint interface.
+ */
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
