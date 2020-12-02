@@ -1,17 +1,18 @@
 package com.example.demo.payload;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @AllArgsConstructor
 @Getter
 @Setter
-public class UserSummary {
-    private Long id;
+public class UserRequest {
+
     private String username;
-   /* private List<OrderSummary> orders;*/
+    private String password;
 }
